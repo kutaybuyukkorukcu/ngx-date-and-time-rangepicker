@@ -1,0 +1,84 @@
+:host ::ng-deep timepicker button {
+    margin-top: 0px !important;
+}
+
+.item-dropdown {
+    position: relative;
+    padding: 10px 20px;
+    display: block;
+}
+
+.display-none {
+    display: none;
+}
+
+// 768 md media ozelinde yazilacak.
+.custom-responsive-col-3 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+
+@mixin theme($theme: red) {
+    padding-left: 5px;
+    color: $theme;
+}
+  
+.timepicker-danger {
+    @include theme;
+}
+  
+.timepicker-success {
+    @include theme($theme: green);
+}
+
+.animate-dropdown {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+  
+@keyframes slideIn {
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+    100% {
+      transform:translateY(0rem);
+      opacity: 1;
+    }
+    0% {
+      transform: translateY(1rem);
+      opacity: 0;
+    }
+}
+  
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
+
+.valid-danger {
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+// .bs-datepicker-head button:nth-child(3){
+//     display:none;
+// }
