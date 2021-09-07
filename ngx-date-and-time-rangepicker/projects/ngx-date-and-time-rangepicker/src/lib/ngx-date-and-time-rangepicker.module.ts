@@ -3,7 +3,7 @@ import { NgxDateAndTimeRangepickerComponent } from './ngx-date-and-time-rangepic
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     NgxDateAndTimeRangepickerComponent
@@ -11,7 +11,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
   imports: [
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot()
+    TimepickerModule.forRoot(),
+    FormsModule
   ],
   exports: [
     NgxDateAndTimeRangepickerComponent
