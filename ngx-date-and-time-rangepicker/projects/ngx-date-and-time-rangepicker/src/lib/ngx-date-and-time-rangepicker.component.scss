@@ -12,6 +12,42 @@
     display: none;
 }
 
+.align-center {
+    align-items: center;
+}
+
+.horizontal-content {
+    display: flex;
+    align-items: center;
+}
+
+.datepicker-label {
+    font-weight: 500;
+    color: darkslategray;
+}
+
+.timepicker-label {
+    margin-bottom: 0 !important;
+}
+
+.timepicker-option {
+    float: right;
+    white-space: break-spaces;
+}
+
+.mb-5 {
+    margin-bottom: 0.5rem;
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.flex-placement {
+    display: flex;
+    float: right;
+}
+
 // 768 md media ozelinde yazilacak.
 .custom-responsive-col-3 {
     position: relative;
@@ -82,3 +118,23 @@
 // .bs-datepicker-head button:nth-child(3){
 //     display:none;
 // }
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: stretch;
+    width: 100%;
+}
+
+/* _input-group.scss:162 */
+.input-group > .input-group-addon:last-child {
+    @include border-right-radius(0);
+}
+
+.input-group-addon {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    margin-left: 0.25rem;
+}

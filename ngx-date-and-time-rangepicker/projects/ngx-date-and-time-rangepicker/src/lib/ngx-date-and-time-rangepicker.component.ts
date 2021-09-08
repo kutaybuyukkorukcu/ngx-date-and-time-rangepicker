@@ -25,6 +25,8 @@ export class NgxDateAndTimeRangepickerComponent implements OnInit, AfterViewInit
 
   dateInputFormat: string = 'MM/DD/YYYY';
 
+  @Input() bsDateepickerColorTheme: DatepickerTheme = 'theme-blue';
+
   @Input() public startDatepickerDate!: Date;
   @Input() public startTimepickerDate!: Date;
   
@@ -312,3 +314,5 @@ export enum Format {
   DATE = 0,
   TIME = 1
 }
+
+type DatepickerTheme = 'theme-default' | 'theme-green' | 'theme-blue' | 'theme-dark-blue' | 'theme-red' | 'theme-orange';

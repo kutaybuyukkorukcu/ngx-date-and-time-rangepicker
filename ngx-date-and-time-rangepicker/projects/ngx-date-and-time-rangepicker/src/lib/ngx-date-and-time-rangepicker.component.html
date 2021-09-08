@@ -4,11 +4,11 @@
     dropdownToggle autocomplete="off" [class.valid-danger]="areFieldsValid !== true" />
     <div class="dropdown-menu dropdown-menu-left animate-dropdown slideIn" role="menu" *dropdownMenu>
         <div class="item-dropdown">
-            <div style="margin-bottom: 0.5rem;">
-                <label> <span style="font-weight: 500;color: darkslategray;"> From: </span></label>
-                <div style="float: right;display: flex;align-items: center;white-space: break-spaces;">
+            <div class="mb-5">
+                <label> <span class="datepicker-label"> From: </span></label>
+                <div class="horizontal-content timepicker-option">
                     <input type="checkbox" id="isStartTimepickerDisabled" name="isStartTimepickerDisabled" [checked]="isStartTimepickerDisabled" (change)="onChangeTimeCheckbox($event, DateOptions.START)">
-                    <label for="isStartTimepickerDisabled" style="margin-bottom: 0 !important;"> With Time </label>
+                    <label for="isStartTimepickerDisabled" class="timepicker-label"> With Time </label>
                 </div>
             </div>
             <div [class.valid-danger]="isStartDatepickerValid !== true">
@@ -18,21 +18,21 @@
                 bsDatepicker
                 [maxDate]="endDatepickerDate"
                 [(ngModel)]="startDatepickerDate"
-                [bsConfig]="{ isAnimated: true, containerClass: 'theme-blue', dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
+                [bsConfig]="{ isAnimated: true, containerClass: bsDateepickerColorTheme, dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
                 (ngModelChange)="onChangeDates()"
                 onkeydown="return false">
             </div>
-            <div style="align-items: center;display: flex;">
+            <div class="horizontal-content">
                 <timepicker class="item-dropdown" [(ngModel)]="startTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.START)" [disabled]="!isStartTimepickerDisabled" (change)="onChangeDates()"></timepicker>
                 <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isStartTimepickerValid == true ? 'none' : ''}"></i>
             </div>
         </div>
         <div class="item-dropdown">
-            <div style="margin-bottom: 0.5rem;">
-                <label> <span style="font-weight: 500;color: darkslategray;"> To: </span></label>
-                <div style="float: right;display: flex;align-items: center;white-space: break-spaces;">
+            <div class="mb-5">
+                <label> <span class="datepicker-label"> To: </span></label>
+                <div class="horizontal-content timepicker-option">
                     <input type="checkbox" id="isEndTimepickerDisabled" name="isEndTimepickerDisabled" [checked]="isEndTimepickerDisabled" (change)="onChangeTimeCheckbox($event, DateOptions.END)">
-                    <label for="isEndTimepickerDisabled" style="margin-bottom: 0 !important;"> With Time </label>
+                    <label for="isEndTimepickerDisabled" class="timepicker-label"> With Time </label>
                 </div>
             </div>
             <div [class.valid-danger]="isEndDatepickerValid !== true">
@@ -42,16 +42,16 @@
                 bsDatepicker
                 [minDate]="startDatepickerDate"
                 [(ngModel)]="endDatepickerDate"
-                [bsConfig]="{ isAnimated: true, containerClass: 'theme-blue', dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
+                [bsConfig]="{ isAnimated: true, containerClass: bsDateepickerColorTheme, dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
                 (ngModelChange)="onChangeDates()"
                 onkeydown="return false">
             </div>
-            <div style="align-items: center;display: flex;">
+            <div class="horizontal-content">
                 <timepicker class="item-dropdown" [(ngModel)]="endTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.END)" [disabled]="!isEndTimepickerDisabled" (change)="onChangeDates()"></timepicker>
                 <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isEndTimepickerValid == true ? 'none' : ''}"></i>
             </div>
         </div>
-        <div class="item-dropdown" style="display: flex;float: right;">
+        <div class="item-dropdown flex-placement">
             <button type="button" class="btn btn-primary" (click)="onApplyDates()" dropdownToggle> Apply </button>
         </div>
     </div>
@@ -63,52 +63,52 @@
     dropdownToggle autocomplete="off" [class.valid-danger]="areFieldsValid !== true" />
     <div class="dropdown-menu dropdown-menu-left animate-dropdown slideIn" role="menu" *dropdownMenu>
         <div class="item-dropdown">
-            <div style="margin-bottom: 0.5rem;">
-                <label> <span style="font-weight: 500;color: darkslategray;"> From: </span></label>
-                <div style="float: right;display: flex;align-items: center;white-space: break-spaces;">
+            <div class="mb-5">
+                <label> <span class="datepicker-label"> From: </span></label>
+                <div class="horizontal-content timepicker-option">
                     <input type="checkbox" id="isStartTimepickerDisabled" name="isStartTimepickerDisabled" [checked]="isStartTimepickerDisabled" (change)="isStartTimepickerDisabled = !isStartTimepickerDisabled">
-                    <label for="isStartTimepickerDisabled" style="margin-bottom: 0 !important;"> With Time </label>
+                    <label for="isStartTimepickerDisabled" class="timepicker-label"> With Time </label>
                 </div>
             </div>
-            <div style="display: flex;align-items: center;">
+            <div class="horizontal-content">
                 <div class="input-group">
-                <input type="text"
-                placeholder="Start Date"
-                class="form-control"
-                bsDatepicker
-                [maxDate]="endDatepickerDate"
-                [(ngModel)]="startDatepickerDate"
-                [bsConfig]="{ isAnimated: true, containerClass: 'theme-blue', dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
-                (ngModelChange)="onChangeDates()"
-                onkeydown="return false">
-                <span class="input-group-addon"> <i class="icon-calendar" aria-hidden="true"></i> </span>
+                    <input type="text"
+                    placeholder="Start Date"
+                    class="form-control"
+                    bsDatepicker
+                    [maxDate]="endDatepickerDate"
+                    [(ngModel)]="startDatepickerDate"
+                    [bsConfig]="{ isAnimated: true, containerClass: bsDateepickerColorTheme, dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
+                    (ngModelChange)="onChangeDates()"
+                    onkeydown="return false">
+                    <span class="input-group-addon"> <i class="icon-calendar" aria-hidden="true"></i> </span>
                 </div>
-                <div style="align-items: center;display: flex;">
+                <div class="horizontal-content">
                     <timepicker class="item-dropdown" [(ngModel)]="startTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.START)" [disabled]="!isStartTimepickerDisabled"></timepicker>
                     <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isStartTimepickerValid == true ? 'none' : ''}"></i>
                 </div>
             </div>
         </div>
         <div class="item-dropdown">
-            <div style="margin-bottom: 0.5rem;">
-                <label> <span style="font-weight: 500;color: darkslategray;"> To: </span></label>
-                <div style="float: right;display: flex;align-items: center;white-space: break-spaces;">
+            <div class="mb-5">
+                <label> <span class="datepicker-label"> To: </span></label>
+                <div class="horizontal-content timepicker-option">
                     <input type="checkbox" id="isEndTimepickerDisabled" name="isEndTimepickerDisabled" [checked]="isEndTimepickerDisabled" (change)="isEndTimepickerDisabled = !isEndTimepickerDisabled">
-                    <label for="isEndTimepickerDisabled" style="margin-bottom: 0 !important;"> With Time </label>
+                    <label for="isEndTimepickerDisabled" class="timepicker-label"> With Time </label>
                 </div>
             </div>
-            <div style="display: flex;align-items: center;">
+            <div class="horizontal-content">
                 <input type="text"
                 placeholder="End Date"
                 class="form-control"
                 bsDatepicker
                 [minDate]="startDatepickerDate"
                 [(ngModel)]="endDatepickerDate"
-                [bsConfig]="{ isAnimated: true, containerClass: 'theme-blue', dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
+                [bsConfig]="{ isAnimated: true, containerClass: bsDateepickerColorTheme, dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
                 (ngModelChange)="onChangeDates()"
                 onkeydown="return false">
             </div>
-            <div style="display: flex;align-items: center;">
+            <div class="horizontal-content">
                 <timepicker class="item-dropdown" [(ngModel)]="endTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.END)" [disabled]="!isEndTimepickerDisabled"></timepicker>
                 <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isEndTimepickerValid == true ? 'none' : ''}"></i>
             </div>
@@ -120,7 +120,7 @@
 
 <div class="row" *ngIf="isForDropdown == false">
     <div class="col-md-12">
-        <div class="row" style="align-items: center;">
+        <div class="row" class="align-center">
             <div class="input-group" [ngClass]="{'col-md-7': isTimepickerAvailable == true , 'col-md-12' : isTimepickerAvailable == false }">
                 <input type="text"
                 placeholder="Select Date"
@@ -129,13 +129,13 @@
                 [(ngModel)]="startDatepickerDate"
                 [maxDate]="currentYearMaxDate"
                 [minDate]="currentYearMinDate"
-                [bsConfig]="{ isAnimated: true, containerClass: 'theme-blue', dateInputFormat: 'MM-DD-YYYY', showClearButton: true, clearPosition: 'left' }"
+                [bsConfig]="{ isAnimated: true, containerClass: bsDateepickerColorTheme, dateInputFormat: dateInputFormat, showClearButton: true, clearPosition: 'left' }"
                 (ngModelChange)="encodeDate()"
                 onkeydown="return false">
                 <span class="input-group-addon"> <i class="icon-calendar" aria-hidden="true"></i> </span>
             </div>
-            <div class="col-md-5" *ngIf="isTimepickerAvailable == true" style="padding-left: 0 !important;align-items: center;display: flex;">
-                <timepicker style="padding-left: 0 !important;" [(ngModel)]="startTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.START)" (change)="encodeDate()"></timepicker>
+            <div class="col-md-5 horizontal-content pl-0" *ngIf="isTimepickerAvailable == true">
+                <timepicker class="pl-0" [(ngModel)]="startTimepickerDate" [mousewheel]="true" [showSpinners]="false" [showMeridian]="false" (isValid)="isValid($event, DateOptions.START)" (change)="encodeDate()"></timepicker>
                 <!-- <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isStartTimepickerValid == true ? 'none' : ''}"></i> -->
                 <i class="far fa-times-circle timepicker-danger" [ngClass]="{'display-none': isStartTimepickerValid == true ? 'none' : ''}"></i>
             </div>
